@@ -1,0 +1,591 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		973F93542B25345A00CE3775 /* PerfumeSuggesterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973F93532B25345A00CE3775 /* PerfumeSuggesterApp.swift */; };
+		973F93562B25345A00CE3775 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973F93552B25345A00CE3775 /* ContentView.swift */; };
+		973F93582B25345A00CE3775 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973F93572B25345A00CE3775 /* Item.swift */; };
+		973F935A2B25345B00CE3775 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 973F93592B25345B00CE3775 /* Assets.xcassets */; };
+		973F935D2B25345B00CE3775 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 973F935C2B25345B00CE3775 /* Preview Assets.xcassets */; };
+		973F93672B25345B00CE3775 /* PerfumeSuggesterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973F93662B25345B00CE3775 /* PerfumeSuggesterTests.swift */; };
+		973F93712B25345B00CE3775 /* PerfumeSuggesterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973F93702B25345B00CE3775 /* PerfumeSuggesterUITests.swift */; };
+		973F93732B25345B00CE3775 /* PerfumeSuggesterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973F93722B25345B00CE3775 /* PerfumeSuggesterUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		973F93632B25345B00CE3775 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 973F93482B25345A00CE3775 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 973F934F2B25345A00CE3775;
+			remoteInfo = PerfumeSuggester;
+		};
+		973F936D2B25345B00CE3775 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 973F93482B25345A00CE3775 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 973F934F2B25345A00CE3775;
+			remoteInfo = PerfumeSuggester;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		973F93502B25345A00CE3775 /* PerfumeSuggester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PerfumeSuggester.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		973F93532B25345A00CE3775 /* PerfumeSuggesterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfumeSuggesterApp.swift; sourceTree = "<group>"; };
+		973F93552B25345A00CE3775 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		973F93572B25345A00CE3775 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		973F93592B25345B00CE3775 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		973F935C2B25345B00CE3775 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		973F93622B25345B00CE3775 /* PerfumeSuggesterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PerfumeSuggesterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		973F93662B25345B00CE3775 /* PerfumeSuggesterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfumeSuggesterTests.swift; sourceTree = "<group>"; };
+		973F936C2B25345B00CE3775 /* PerfumeSuggesterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PerfumeSuggesterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		973F93702B25345B00CE3775 /* PerfumeSuggesterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfumeSuggesterUITests.swift; sourceTree = "<group>"; };
+		973F93722B25345B00CE3775 /* PerfumeSuggesterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfumeSuggesterUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		973F934D2B25345A00CE3775 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		973F935F2B25345B00CE3775 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		973F93692B25345B00CE3775 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		973F93472B25345A00CE3775 = {
+			isa = PBXGroup;
+			children = (
+				973F93522B25345A00CE3775 /* PerfumeSuggester */,
+				973F93652B25345B00CE3775 /* PerfumeSuggesterTests */,
+				973F936F2B25345B00CE3775 /* PerfumeSuggesterUITests */,
+				973F93512B25345A00CE3775 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		973F93512B25345A00CE3775 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				973F93502B25345A00CE3775 /* PerfumeSuggester.app */,
+				973F93622B25345B00CE3775 /* PerfumeSuggesterTests.xctest */,
+				973F936C2B25345B00CE3775 /* PerfumeSuggesterUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		973F93522B25345A00CE3775 /* PerfumeSuggester */ = {
+			isa = PBXGroup;
+			children = (
+				973F93532B25345A00CE3775 /* PerfumeSuggesterApp.swift */,
+				973F93552B25345A00CE3775 /* ContentView.swift */,
+				973F93572B25345A00CE3775 /* Item.swift */,
+				973F93592B25345B00CE3775 /* Assets.xcassets */,
+				973F935B2B25345B00CE3775 /* Preview Content */,
+			);
+			path = PerfumeSuggester;
+			sourceTree = "<group>";
+		};
+		973F935B2B25345B00CE3775 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				973F935C2B25345B00CE3775 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		973F93652B25345B00CE3775 /* PerfumeSuggesterTests */ = {
+			isa = PBXGroup;
+			children = (
+				973F93662B25345B00CE3775 /* PerfumeSuggesterTests.swift */,
+			);
+			path = PerfumeSuggesterTests;
+			sourceTree = "<group>";
+		};
+		973F936F2B25345B00CE3775 /* PerfumeSuggesterUITests */ = {
+			isa = PBXGroup;
+			children = (
+				973F93702B25345B00CE3775 /* PerfumeSuggesterUITests.swift */,
+				973F93722B25345B00CE3775 /* PerfumeSuggesterUITestsLaunchTests.swift */,
+			);
+			path = PerfumeSuggesterUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		973F934F2B25345A00CE3775 /* PerfumeSuggester */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 973F93762B25345B00CE3775 /* Build configuration list for PBXNativeTarget "PerfumeSuggester" */;
+			buildPhases = (
+				973F934C2B25345A00CE3775 /* Sources */,
+				973F934D2B25345A00CE3775 /* Frameworks */,
+				973F934E2B25345A00CE3775 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PerfumeSuggester;
+			productName = PerfumeSuggester;
+			productReference = 973F93502B25345A00CE3775 /* PerfumeSuggester.app */;
+			productType = "com.apple.product-type.application";
+		};
+		973F93612B25345B00CE3775 /* PerfumeSuggesterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 973F93792B25345B00CE3775 /* Build configuration list for PBXNativeTarget "PerfumeSuggesterTests" */;
+			buildPhases = (
+				973F935E2B25345B00CE3775 /* Sources */,
+				973F935F2B25345B00CE3775 /* Frameworks */,
+				973F93602B25345B00CE3775 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				973F93642B25345B00CE3775 /* PBXTargetDependency */,
+			);
+			name = PerfumeSuggesterTests;
+			productName = PerfumeSuggesterTests;
+			productReference = 973F93622B25345B00CE3775 /* PerfumeSuggesterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		973F936B2B25345B00CE3775 /* PerfumeSuggesterUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 973F937C2B25345B00CE3775 /* Build configuration list for PBXNativeTarget "PerfumeSuggesterUITests" */;
+			buildPhases = (
+				973F93682B25345B00CE3775 /* Sources */,
+				973F93692B25345B00CE3775 /* Frameworks */,
+				973F936A2B25345B00CE3775 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				973F936E2B25345B00CE3775 /* PBXTargetDependency */,
+			);
+			name = PerfumeSuggesterUITests;
+			productName = PerfumeSuggesterUITests;
+			productReference = 973F936C2B25345B00CE3775 /* PerfumeSuggesterUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		973F93482B25345A00CE3775 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					973F934F2B25345A00CE3775 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					973F93612B25345B00CE3775 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 973F934F2B25345A00CE3775;
+					};
+					973F936B2B25345B00CE3775 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 973F934F2B25345A00CE3775;
+					};
+				};
+			};
+			buildConfigurationList = 973F934B2B25345A00CE3775 /* Build configuration list for PBXProject "PerfumeSuggester" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 973F93472B25345A00CE3775;
+			productRefGroup = 973F93512B25345A00CE3775 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				973F934F2B25345A00CE3775 /* PerfumeSuggester */,
+				973F93612B25345B00CE3775 /* PerfumeSuggesterTests */,
+				973F936B2B25345B00CE3775 /* PerfumeSuggesterUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		973F934E2B25345A00CE3775 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				973F935D2B25345B00CE3775 /* Preview Assets.xcassets in Resources */,
+				973F935A2B25345B00CE3775 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		973F93602B25345B00CE3775 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		973F936A2B25345B00CE3775 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		973F934C2B25345A00CE3775 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				973F93562B25345A00CE3775 /* ContentView.swift in Sources */,
+				973F93582B25345A00CE3775 /* Item.swift in Sources */,
+				973F93542B25345A00CE3775 /* PerfumeSuggesterApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		973F935E2B25345B00CE3775 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				973F93672B25345B00CE3775 /* PerfumeSuggesterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		973F93682B25345B00CE3775 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				973F93712B25345B00CE3775 /* PerfumeSuggesterUITests.swift in Sources */,
+				973F93732B25345B00CE3775 /* PerfumeSuggesterUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		973F93642B25345B00CE3775 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 973F934F2B25345A00CE3775 /* PerfumeSuggester */;
+			targetProxy = 973F93632B25345B00CE3775 /* PBXContainerItemProxy */;
+		};
+		973F936E2B25345B00CE3775 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 973F934F2B25345A00CE3775 /* PerfumeSuggester */;
+			targetProxy = 973F936D2B25345B00CE3775 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		973F93742B25345B00CE3775 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		973F93752B25345B00CE3775 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		973F93772B25345B00CE3775 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PerfumeSuggester/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MykhailoNaumov.PerfumeSuggester;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		973F93782B25345B00CE3775 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PerfumeSuggester/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MykhailoNaumov.PerfumeSuggester;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		973F937A2B25345B00CE3775 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MykhailoNaumov.PerfumeSuggesterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PerfumeSuggester.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PerfumeSuggester";
+			};
+			name = Debug;
+		};
+		973F937B2B25345B00CE3775 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MykhailoNaumov.PerfumeSuggesterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PerfumeSuggester.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PerfumeSuggester";
+			};
+			name = Release;
+		};
+		973F937D2B25345B00CE3775 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MykhailoNaumov.PerfumeSuggesterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PerfumeSuggester;
+			};
+			name = Debug;
+		};
+		973F937E2B25345B00CE3775 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MykhailoNaumov.PerfumeSuggesterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PerfumeSuggester;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		973F934B2B25345A00CE3775 /* Build configuration list for PBXProject "PerfumeSuggester" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				973F93742B25345B00CE3775 /* Debug */,
+				973F93752B25345B00CE3775 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		973F93762B25345B00CE3775 /* Build configuration list for PBXNativeTarget "PerfumeSuggester" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				973F93772B25345B00CE3775 /* Debug */,
+				973F93782B25345B00CE3775 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		973F93792B25345B00CE3775 /* Build configuration list for PBXNativeTarget "PerfumeSuggesterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				973F937A2B25345B00CE3775 /* Debug */,
+				973F937B2B25345B00CE3775 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		973F937C2B25345B00CE3775 /* Build configuration list for PBXNativeTarget "PerfumeSuggesterUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				973F937D2B25345B00CE3775 /* Debug */,
+				973F937E2B25345B00CE3775 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 973F93482B25345A00CE3775 /* Project object */;
+}
