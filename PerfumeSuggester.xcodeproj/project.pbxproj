@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		971147CD2B25ED13007E4FF0 /* AllPerfumesTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971147CC2B25ED13007E4FF0 /* AllPerfumesTab.swift */; };
 		973F93542B25345A00CE3775 /* PerfumeSuggesterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973F93532B25345A00CE3775 /* PerfumeSuggesterApp.swift */; };
 		973F93562B25345A00CE3775 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973F93552B25345A00CE3775 /* ContentView.swift */; };
 		973F93582B25345A00CE3775 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973F93572B25345A00CE3775 /* Item.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		971147CC2B25ED13007E4FF0 /* AllPerfumesTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPerfumesTab.swift; sourceTree = "<group>"; };
 		973F93502B25345A00CE3775 /* PerfumeSuggester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PerfumeSuggester.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		973F93532B25345A00CE3775 /* PerfumeSuggesterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfumeSuggesterApp.swift; sourceTree = "<group>"; };
 		973F93552B25345A00CE3775 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				973F93832B25390000CE3775 /* PerfumeDetailsView.swift */,
 				973F93852B253F1000CE3775 /* AddPerfumeTab.swift */,
 				973F93872B253F4E00CE3775 /* FilterPerfumeTab.swift */,
+				971147CC2B25ED13007E4FF0 /* AllPerfumesTab.swift */,
 			);
 			path = PerfumeSuggester;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				973F93842B25390000CE3775 /* PerfumeDetailsView.swift in Sources */,
 				973F93802B2534DC00CE3775 /* Perfume.swift in Sources */,
 				973F93882B253F4E00CE3775 /* FilterPerfumeTab.swift in Sources */,
+				971147CD2B25ED13007E4FF0 /* AllPerfumesTab.swift in Sources */,
 				973F93822B25354300CE3775 /* PerfumeViewModel.swift in Sources */,
 				973F93562B25345A00CE3775 /* ContentView.swift in Sources */,
 				973F93582B25345A00CE3775 /* Item.swift in Sources */,

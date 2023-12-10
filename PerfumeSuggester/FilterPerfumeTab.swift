@@ -63,7 +63,7 @@ struct FilterPerfumeTab: View {
                         NavigationLink(
                             destination: PerfumeDetailsView(perfume: perfume),
                             label: {
-                                Text("\(perfume.name) - \(perfume.seasons.joined(separator: ", ")), \(perfume.dayTimes.joined(separator: ", "))")
+                                Text("\(perfume.brand) \(perfume.name) - \(perfume.seasons.joined(separator: ", ")), \(perfume.dayTimes.joined(separator: ", "))")
                             }
                         )
                     }

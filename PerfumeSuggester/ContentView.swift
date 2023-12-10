@@ -24,6 +24,9 @@ struct ContentView: View {
                           perfumeBrand: $perfumeBrand,
                           selectedSeasons: $selectedSeasons,
                           selectedDayTimes: $selectedDayTimes)
+            
+            // Third Tab: All the collection
+            AllPerfumesTab(viewModel: viewModel)
         }
     }
 }
