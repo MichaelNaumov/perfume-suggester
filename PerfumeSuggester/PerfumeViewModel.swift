@@ -19,6 +19,7 @@ class PerfumeViewModel: ObservableObject {
         do {
             let data = try JSONEncoder().encode(perfumes)
             UserDefaults.standard.set(data, forKey: "perfumes")
+            print("Perfumes saved successfully.")
         } catch {
             print("Error encoding perfumes: \(error)")
         }
@@ -28,9 +29,12 @@ class PerfumeViewModel: ObservableObject {
         if let data = UserDefaults.standard.data(forKey: "perfumes") {
             do {
                 perfumes = try JSONDecoder().decode([Perfume].self, from: data)
+                print("Perfumes loaded successfully.")
             } catch {
                 print("Error decoding perfumes: \(error)")
             }
+        } else {
+            print("No data found for key 'perfumes' in UserDefaults.")
         }
     }
 }
