@@ -24,8 +24,8 @@ struct AddPerfumeTab: View {
         NavigationView {
             Form {
                 Section(header: Text("New Perfume")) {
-                    TextField("Perfume Name", text: $perfumeBrand)
-                    TextField("Perfume Brand", text: $perfumeName)
+                    TextField("Perfume Brand", text: $perfumeBrand)
+                    TextField("Perfume Name", text: $perfumeName)
                 }
 
                 Section(header: Text("Seasons")) {
@@ -76,8 +76,10 @@ struct AddPerfumeTab: View {
 
                         // Clear the text field and reset other fields after adding a perfume
                         perfumeName = ""
+                        perfumeBrand = ""
                         selectedSeasons = []
                         selectedDayTimes = []
+                        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                     }
                 }
 
