@@ -18,5 +18,4 @@ Welcome to PerfumeSuggester, an innovative app that helps you discover the perfe
     cd PerfumeSuggester
     open PerfumeSuggester.xcodeproj
 3. **Build and Run:**
-  ```bash
   Click the "Run" button in Xcode to launch the app on your simulator or connected device.
