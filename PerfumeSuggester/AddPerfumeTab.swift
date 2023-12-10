@@ -45,8 +45,20 @@ struct AddPerfumeTab: View {
                 
                 Section(header: Text("Perfume Collection")) {
                     // Display a List of perfumes ordered by name
-                    List(viewModel.perfumes.sorted(by: { $0.name < $1.name })) { perfume in
-                        Text("\(perfume.name) - \(perfume.season), \(perfume.timeOfDay)")
+                    List {
+                        ForEach(viewModel.perfumes) { perfume in
+                            NavigationLink(
+                                destination: PerfumeDetailsView(perfume: perfume),
+                                label: {
+                                    Text("\(perfume.name) - \(perfume.season), \(perfume.timeOfDay)")
+                                }
+                            )
+                        }
+                        .onDelete { indexSet in
+                            // Handle perfume deletion here
+                            viewModel.perfumes.remove(atOffsets: indexSet)
+                            viewModel.savePerfumes()  // Save changes after deletion
+                        }
                     }
                 }
             }

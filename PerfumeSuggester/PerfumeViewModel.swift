@@ -15,7 +15,7 @@ class PerfumeViewModel: ObservableObject {
         savePerfumes()
     }
 
-    private func savePerfumes() {
+    func savePerfumes() {
         do {
             let data = try JSONEncoder().encode(perfumes)
             UserDefaults.standard.set(data, forKey: "perfumes")
