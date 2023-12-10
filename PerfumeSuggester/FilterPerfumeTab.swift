@@ -43,16 +43,20 @@ struct FilterPerfumeTab: View {
                 }
 
                 Section(header: Text("Filters")) {
-                    Button("Apply Filters") {
-                        filteredPerfumes = viewModel.perfumes.filter { perfume in
-                            let isSelectedSeason = selectedSeason.isEmpty || perfume.seasons.contains(selectedSeason)
-                            let isSelectedTimeOfDay = selectedTimeOfDay.isEmpty || perfume.dayTimes.contains(selectedTimeOfDay)
-
-                            return isSelectedSeason && isSelectedTimeOfDay
+                    HStack {
+                        Button("Apply Filters") {
+                            filteredPerfumes = viewModel.perfumes.filter { perfume in
+                                let isSelectedSeason = selectedSeason.isEmpty || perfume.seasons.contains(selectedSeason)
+                                let isSelectedTimeOfDay = selectedTimeOfDay.isEmpty || perfume.dayTimes.contains(selectedTimeOfDay)
+                                return isSelectedSeason && isSelectedTimeOfDay
+                            }
                         }
                     }
-                }
 
+                    Button("Clear Results") {
+                        filteredPerfumes.removeAll()
+                    }
+                }
 
                 Section(header: Text("Perfume Collection")) {
                     List(filteredPerfumes) { perfume in
