@@ -1,15 +1,15 @@
-//
-//  Perfume.swift
-//  PerfumeSuggester
-//
-//  Created by Mykhailo Naumov on 10.12.2023.
-//
-
+// Perfume.swift
 import Foundation
 
-struct Perfume: Identifiable {
+class Perfume: Codable, Identifiable {
     var id = UUID()
     var name: String
     var season: String
     var timeOfDay: String
+
+    init(name: String, season: String, timeOfDay: String) {
+        self.name = name
+        self.season = season
+        self.timeOfDay = timeOfDay
+    }
 }
