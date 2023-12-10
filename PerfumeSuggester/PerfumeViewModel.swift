@@ -9,8 +9,8 @@ class PerfumeViewModel: ObservableObject {
         loadPerfumes()
     }
 
-    func addPerfume(name: String, seasons: [String], dayTimes: [String]) {
-        let perfume = Perfume(name: name, seasons: seasons, dayTimes: dayTimes)
+    func addPerfume(name: String, seasons: [String], dayTimes: [String], brand: String) {
+        let perfume = Perfume(name: name, seasons: seasons, dayTimes: dayTimes, brand: brand)
         perfumes.append(perfume)
         savePerfumes()
     }

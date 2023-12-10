@@ -6,6 +6,14 @@ struct PerfumeDetailsView: View {
 
     var body: some View {
         VStack {
+            Text("Perfume Details: \(perfume.name)")
+                .font(.title)
+
+            Spacer()
+
+            Text("Brand: \(perfume.brand)")
+                .padding()
+
             Text("Seasons: \(perfume.seasons.joined(separator: ", "))")
                 .padding()
 

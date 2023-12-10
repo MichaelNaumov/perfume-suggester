@@ -4,6 +4,7 @@ import SwiftUI
 struct AddPerfumeTab: View {
     @ObservedObject var viewModel: PerfumeViewModel
     @Binding var perfumeName: String
+    @Binding var perfumeBrand: String
     @Binding var selectedSeasons: [String]
     @Binding var selectedDayTimes: [String]
     
@@ -23,7 +24,8 @@ struct AddPerfumeTab: View {
         NavigationView {
             Form {
                 Section(header: Text("New Perfume")) {
-                    TextField("Enter Perfume Name", text: $perfumeName)
+                    TextField("Perfume Name", text: $perfumeBrand)
+                    TextField("Perfume Brand", text: $perfumeName)
                 }
 
                 Section(header: Text("Seasons")) {
@@ -70,7 +72,7 @@ struct AddPerfumeTab: View {
 
                 Section {
                     Button("Add Perfume") {
-                        viewModel.addPerfume(name: perfumeName, seasons: selectedSeasons, dayTimes: selectedDayTimes)
+                        viewModel.addPerfume(name: perfumeName, seasons: selectedSeasons, dayTimes: selectedDayTimes, brand: perfumeBrand)
 
                         // Clear the text field and reset other fields after adding a perfume
                         perfumeName = ""
