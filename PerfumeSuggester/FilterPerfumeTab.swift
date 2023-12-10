@@ -3,7 +3,16 @@ import SwiftUI
 
 struct FilterPerfumeTab: View {
     @ObservedObject var viewModel: PerfumeViewModel
-
+    
+//    enum Season: String, CaseIterable, Identifiable {
+//        case spring
+//        case summer
+//        case autumn
+//        case winter
+//
+//        var id: String { self.rawValue }
+//    }
+    
     @State private var isSpringChecked = false
     @State private var isSummerChecked = false
     @State private var isAutumnChecked = false
@@ -11,6 +20,22 @@ struct FilterPerfumeTab: View {
 
     @State private var isDayChecked = false
     @State private var isNightChecked = false
+    @State private var selectedSeason = "Spring"
+    @State private var selectedDayTime = "Day"
+ 
+    let seasons = ["Spring", "Summer", "Autumn", "Winter"]
+
+    private let seasonEmojis: [String: String] = [
+        "Spring": "🌿",
+        "Summer": "⛱️",
+        "Autumn": "🍁",
+        "Winter": "❄️"
+    ]
+    
+    private let dayTimeEmojis: [String: String] = [
+        "Day": "☀️",
+        "Night": "🌙"
+    ]
 
     @State private var filteredPerfumes: [Perfume] = []
 
@@ -18,15 +43,19 @@ struct FilterPerfumeTab: View {
         NavigationView {
             Form {
                 Section(header: Text("Seasons")) {
-                    Toggle("Spring 🌿", isOn: $isSpringChecked)
-                    Toggle("Summer ⛱️", isOn: $isSummerChecked)
-                    Toggle("Autumn 🍁", isOn: $isAutumnChecked)
-                    Toggle("Winter ❄️", isOn: $isWinterChecked)
+                    Picker("Season", selection: $selectedSeason) {
+                        ForEach(["Spring", "Summer", "Autumn", "Winter"], id: \.self) { season in
+                            Text("\(season) \(seasonEmojis[season] ?? "")")
+                        }
+                    }
                 }
 
-                Section(header: Text("Day Times")) {
-                    Toggle("Day ☀️", isOn: $isDayChecked)
-                    Toggle("Night 🌙", isOn: $isNightChecked)
+                Section(header: Text("Day Time")) {
+                    Picker("Day time", selection: $selectedDayTime) {
+                        ForEach(["Day", "Night"], id: \.self) { daytime in
+                            Text("\(daytime) \(dayTimeEmojis[daytime] ?? "")")
+                        }
+                    }
                 }
 
                 Section(header: Text("Filters")) {
