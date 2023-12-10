@@ -6,13 +6,19 @@ struct AllPerfumesTab: View {
 
     var body: some View {
         NavigationView {
-            List(viewModel.perfumes) { perfume in
-                NavigationLink(
-                    destination: PerfumeDetailsView(perfume: perfume),
-                    label: {
-                        Text("\(perfume.brand) \(perfume.name) - \(perfume.seasons.joined(separator: ", ")), \(perfume.dayTimes.joined(separator: ", "))")
-                    }
-                )
+            List {
+                ForEach(viewModel.perfumes) { perfume in
+                    NavigationLink(
+                        destination: PerfumeDetailsView(perfume: perfume),
+                        label: {
+                            Text("\(perfume.brand) \(perfume.name) - \(perfume.seasons.joined(separator: ", ")), \(perfume.dayTimes.joined(separator: ", "))")
+                        }
+                    )
+                }
+                .onDelete { indexSet in
+                    // Handle perfume deletion here
+                    viewModel.removePerfumes(atOffsets: indexSet)
+                }
             }
             .navigationTitle("All Perfumes")
         }

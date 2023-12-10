@@ -14,6 +14,11 @@ class PerfumeViewModel: ObservableObject {
         perfumes.append(perfume)
         savePerfumes()
     }
+    
+    func removePerfumes(atOffsets offsets: IndexSet) {
+        perfumes.remove(atOffsets: offsets)
+        savePerfumes()
+    }
 
     func savePerfumes() {
         do {

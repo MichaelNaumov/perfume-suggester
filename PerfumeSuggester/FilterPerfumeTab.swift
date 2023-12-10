@@ -6,20 +6,9 @@ struct FilterPerfumeTab: View {
     
     @State private var selectedSeason = "Spring"
     @State private var selectedTimeOfDay = "Day"
- 
-    let seasons = ["Spring", "Summer", "Autumn", "Winter"]
 
-    private let seasonEmojis: [String: String] = [
-        "Spring": "🌿",
-        "Summer": "⛱️",
-        "Autumn": "🍁",
-        "Winter": "❄️"
-    ]
-    
-    private let dayTimeEmojis: [String: String] = [
-        "Day": "☀️",
-        "Night": "🌙"
-    ]
+    let seasonEmojis = EmojiData.seasonEmojis
+    let dayTimeEmojis = EmojiData.dayTimeEmojis
 
     @State private var filteredPerfumes: [Perfume] = []
 

@@ -8,17 +8,8 @@ struct AddPerfumeTab: View {
     @Binding var selectedSeasons: [String]
     @Binding var selectedDayTimes: [String]
     
-    private let seasonEmojis: [String: String] = [
-        "Spring": "🌿",
-        "Summer": "⛱️",
-        "Autumn": "🍁",
-        "Winter": "❄️"
-    ]
-    
-    private let dayTimeEmojis: [String: String] = [
-        "Day": "☀️",
-        "Night": "🌙"
-    ]
+    let seasonEmojis = EmojiData.seasonEmojis
+    let dayTimeEmojis = EmojiData.dayTimeEmojis
 
     var body: some View {
         NavigationView {
@@ -79,6 +70,7 @@ struct AddPerfumeTab: View {
                         perfumeBrand = ""
                         selectedSeasons = []
                         selectedDayTimes = []
+                        // Hide the keyboard after new perfume submit
                         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                     }
                 }
