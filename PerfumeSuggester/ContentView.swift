@@ -1,61 +1,44 @@
-//
-//  ContentView.swift
-//  PerfumeSuggester
-//
-//  Created by Mykhailo Naumov on 10.12.2023.
-//
-
+// ContentView.swift
 import SwiftUI
-import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    @ObservedObject var viewModel: PerfumeViewModel
+
+    // Seasons
+    @State private var isSpringChecked = false
+    @State private var isSummerChecked = false
+    @State private var isAutumnChecked = false
+    @State private var isWinterChecked = false
+
+    // Day Times
+    @State private var isDayChecked = false
+    @State private var isNightChecked = false
+
+    // Filter
+    @State private var filteredPerfumes: [Perfume] = []
+
+    // New Perfume
+    @State private var perfumeName = ""
+    @State private var selectedSeason = "Spring"
+    @State private var selectedTimeOfDay = "Day"
 
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
-                }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-        } detail: {
-            Text("Select an item")
+        TabView {
+            // First Tab: Filter Perfumes
+            FilterPerfumeTab(viewModel: viewModel)
+//                             isSpringChecked: $isSpringChecked,
+//                             isSummerChecked: $isSummerChecked,
+//                             isAutumnChecked: $isAutumnChecked,
+//                             isWinterChecked: $isWinterChecked,
+//                             isDayChecked: $isDayChecked,
+//                             isNightChecked: $isNightChecked,
+//                             filteredPerfumes: $filteredPerfumes)
+
+            // Second Tab: Add New Perfume
+            AddPerfumeTab(viewModel: viewModel,
+                          perfumeName: $perfumeName,
+                          selectedSeason: $selectedSeason,
+                          selectedTimeOfDay: $selectedTimeOfDay)
         }
     }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
-            }
-        }
-    }
-}
-
-#Preview {
-    ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
 }
