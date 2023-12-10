@@ -9,8 +9,8 @@ struct ContentView: View {
 
     // New Perfume
     @State private var perfumeName = ""
-    @State private var selectedSeason = "Spring"
-    @State private var selectedTimeOfDay = "Day"
+    @State private var selectedSeasons = ["Spring"]
+    @State private var selectedDayTimes = ["Day"]
 
     var body: some View {
         TabView {
@@ -20,8 +20,8 @@ struct ContentView: View {
             // Second Tab: Add New Perfume
             AddPerfumeTab(viewModel: viewModel,
                           perfumeName: $perfumeName,
-                          selectedSeason: $selectedSeason,
-                          selectedTimeOfDay: $selectedTimeOfDay)
+                          selectedSeasons: $selectedSeasons,
+                          selectedDayTimes: $selectedDayTimes)
         }
     }
 }

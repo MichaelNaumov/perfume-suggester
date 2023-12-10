@@ -5,7 +5,15 @@ struct PerfumeDetailsView: View {
     var perfume: Perfume
 
     var body: some View {
-        Text("Perfume Details: \(perfume.name)")
-            .navigationTitle(perfume.name)
+        VStack {
+            Text("Seasons: \(perfume.seasons.joined(separator: ", "))")
+                .padding()
+
+            Text("Day Times: \(perfume.dayTimes.joined(separator: ", "))")
+                .padding()
+
+            Spacer()
+        }
+        .navigationTitle(perfume.name)
     }
 }

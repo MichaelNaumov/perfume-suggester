@@ -45,12 +45,10 @@ struct FilterPerfumeTab: View {
                 Section(header: Text("Filters")) {
                     Button("Apply Filters") {
                         filteredPerfumes = viewModel.perfumes.filter { perfume in
-                            return (selectedSeason == "Spring" && perfume.season.contains("Spring")) ||
-                                   (selectedSeason == "Summer" && perfume.season.contains("Summer")) ||
-                                   (selectedSeason == "Autumn" && perfume.season.contains("Autumn")) ||
-                                   (selectedSeason == "Winter" && perfume.season.contains("Winter")) ||
-                                   (selectedTimeOfDay == "Day" && perfume.timeOfDay.contains("Day")) ||
-                                   (selectedTimeOfDay == "Night" && perfume.timeOfDay.contains("Night"))
+                            let isSelectedSeason = selectedSeason.isEmpty || perfume.seasons.contains(selectedSeason)
+                            let isSelectedTimeOfDay = selectedTimeOfDay.isEmpty || perfume.dayTimes.contains(selectedTimeOfDay)
+
+                            return isSelectedSeason && isSelectedTimeOfDay
                         }
                     }
                 }
@@ -61,7 +59,7 @@ struct FilterPerfumeTab: View {
                         NavigationLink(
                             destination: PerfumeDetailsView(perfume: perfume),
                             label: {
-                                Text("\(perfume.name) - \(perfume.season), \(perfume.timeOfDay)")
+                                Text("\(perfume.name) - \(perfume.seasons.joined(separator: ", ")), \(perfume.dayTimes.joined(separator: ", "))")
                             }
                         )
                     }

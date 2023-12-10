@@ -4,8 +4,20 @@ import SwiftUI
 struct AddPerfumeTab: View {
     @ObservedObject var viewModel: PerfumeViewModel
     @Binding var perfumeName: String
-    @Binding var selectedSeason: String
-    @Binding var selectedTimeOfDay: String
+    @Binding var selectedSeasons: [String]
+    @Binding var selectedDayTimes: [String]
+    
+    private let seasonEmojis: [String: String] = [
+        "Spring": "🌿",
+        "Summer": "⛱️",
+        "Autumn": "🍁",
+        "Winter": "❄️"
+    ]
+    
+    private let dayTimeEmojis: [String: String] = [
+        "Day": "☀️",
+        "Night": "🌙"
+    ]
 
     var body: some View {
         NavigationView {
@@ -15,34 +27,58 @@ struct AddPerfumeTab: View {
                 }
 
                 Section(header: Text("Seasons")) {
-                    ForEach(["Spring 🌿", "Summer ⛱️", "Autumn 🍁", "Winter ❄️"], id: \.self) { season in
-                        Toggle(season, isOn: Binding(
-                            get: { selectedSeason == season },
-                            set: { _ in selectedSeason = season }
-                        ))
+                    ForEach(["Spring", "Summer", "Autumn", "Winter"], id: \.self) { season in
+                        Toggle(isOn: Binding(
+                            get: { selectedSeasons.contains(season) },
+                            set: { _ in
+                                if selectedSeasons.contains(season) {
+                                    selectedSeasons.removeAll { $0 == season }
+                                } else {
+                                    selectedSeasons.append(season)
+                                }
+                            }
+                        )) {
+                            // Custom label for the toggle
+                            HStack {
+                                Text("\(season) \(seasonEmojis[season] ?? "")")
+                                Spacer()
+                            }
+                        }
                     }
                 }
 
                 Section(header: Text("Day Times")) {
-                    ForEach(["Day ☀️", "Night 🌙"], id: \.self) { timeOfDay in
-                        Toggle(timeOfDay, isOn: Binding(
-                            get: { selectedTimeOfDay == timeOfDay },
-                            set: { _ in selectedTimeOfDay = timeOfDay }
-                        ))
+                    ForEach(["Day", "Night"], id: \.self) { timeOfDay in
+                        Toggle(isOn: Binding(
+                            get: { selectedDayTimes.contains(timeOfDay) },
+                            set: { _ in
+                                if selectedDayTimes.contains(timeOfDay) {
+                                    selectedDayTimes.removeAll { $0 == timeOfDay }
+                                } else {
+                                    selectedDayTimes.append(timeOfDay)
+                                }
+                            }
+                        )) {
+                            // Custom label for the toggle
+                            HStack {
+                                Text("\(timeOfDay) \(dayTimeEmojis[timeOfDay] ?? "")")
+                                Spacer()
+                            }
+                        }
                     }
                 }
 
                 Section {
                     Button("Add Perfume") {
-                        viewModel.addPerfume(name: perfumeName, season: selectedSeason, timeOfDay: selectedTimeOfDay)
+                        viewModel.addPerfume(name: perfumeName, seasons: selectedSeasons, dayTimes: selectedDayTimes)
 
                         // Clear the text field and reset other fields after adding a perfume
                         perfumeName = ""
-                        selectedSeason = "Spring"
-                        selectedTimeOfDay = "Day"
+                        selectedSeasons = []
+                        selectedDayTimes = []
                     }
                 }
-                
+
                 Section(header: Text("Perfume Collection")) {
                     // Display a List of perfumes ordered by name
                     List {
@@ -50,7 +86,7 @@ struct AddPerfumeTab: View {
                             NavigationLink(
                                 destination: PerfumeDetailsView(perfume: perfume),
                                 label: {
-                                    Text("\(perfume.name) - \(perfume.season), \(perfume.timeOfDay)")
+                                    Text("\(perfume.name) - \(perfume.seasons.joined(separator: ", ")), \(perfume.dayTimes.joined(separator: ", "))")
                                 }
                             )
                         }

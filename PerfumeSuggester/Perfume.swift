@@ -1,15 +1,14 @@
-// Perfume.swift
 import Foundation
 
 class Perfume: Codable, Identifiable {
     var id = UUID()
     var name: String
-    var season: String
-    var timeOfDay: String
+    var seasons: [String]
+    var dayTimes: [String]
 
-    init(name: String, season: String, timeOfDay: String) {
+    init(name: String, seasons: [String], dayTimes: [String]) {
         self.name = name
-        self.season = season
-        self.timeOfDay = timeOfDay
+        self.seasons = seasons
+        self.dayTimes = dayTimes
     }
 }
