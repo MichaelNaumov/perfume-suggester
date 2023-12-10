@@ -19,8 +19,8 @@ struct ContentView: View {
 
     // New Perfume
     @State private var perfumeName = ""
-    @State private var selectedSeason = "Spring"
-    @State private var selectedTimeOfDay = "Day"
+    @State private var selectedSeason = ""
+    @State private var selectedTimeOfDay = ""
 
     var body: some View {
         TabView {

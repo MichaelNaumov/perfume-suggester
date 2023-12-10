@@ -18,15 +18,15 @@ struct FilterPerfumeTab: View {
         NavigationView {
             Form {
                 Section(header: Text("Seasons")) {
-                    Toggle("Spring", isOn: $isSpringChecked)
-                    Toggle("Summer", isOn: $isSummerChecked)
-                    Toggle("Autumn", isOn: $isAutumnChecked)
-                    Toggle("Winter", isOn: $isWinterChecked)
+                    Toggle("Spring 🌿", isOn: $isSpringChecked)
+                    Toggle("Summer ⛱️", isOn: $isSummerChecked)
+                    Toggle("Autumn 🍁", isOn: $isAutumnChecked)
+                    Toggle("Winter ❄️", isOn: $isWinterChecked)
                 }
 
                 Section(header: Text("Day Times")) {
-                    Toggle("Day", isOn: $isDayChecked)
-                    Toggle("Night", isOn: $isNightChecked)
+                    Toggle("Day ☀️", isOn: $isDayChecked)
+                    Toggle("Night 🌙", isOn: $isNightChecked)
                 }
 
                 Section(header: Text("Filters")) {

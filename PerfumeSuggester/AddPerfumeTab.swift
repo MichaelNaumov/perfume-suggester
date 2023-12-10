@@ -15,7 +15,7 @@ struct AddPerfumeTab: View {
                 }
 
                 Section(header: Text("Seasons")) {
-                    ForEach(["Spring", "Summer", "Autumn", "Winter"], id: \.self) { season in
+                    ForEach(["Spring 🌿", "Summer ⛱️", "Autumn 🍁", "Winter ❄️"], id: \.self) { season in
                         Toggle(season, isOn: Binding(
                             get: { selectedSeason == season },
                             set: { _ in selectedSeason = season }
@@ -24,7 +24,7 @@ struct AddPerfumeTab: View {
                 }
 
                 Section(header: Text("Day Times")) {
-                    ForEach(["Day", "Night"], id: \.self) { timeOfDay in
+                    ForEach(["Day ☀️", "Night 🌙"], id: \.self) { timeOfDay in
                         Toggle(timeOfDay, isOn: Binding(
                             get: { selectedTimeOfDay == timeOfDay },
                             set: { _ in selectedTimeOfDay = timeOfDay }
