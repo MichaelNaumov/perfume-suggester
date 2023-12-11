@@ -22,8 +22,22 @@ Welcome to PerfumeSuggester, an innovative app that helps you discover the perfe
 
 4. **Screenshots:**
 
-<p float="left">
-  <img src="PerfumeSuggester/Screenshots/IMG_2418.jpeg" width="33%" />
-  <img src="PerfumeSuggester/Screenshots/IMG_2419.jpeg" width="33%" />
-  <img src="PerfumeSuggester/Screenshots/IMG_2420.jpeg" width="33%" />
-</p>
+<table>
+  <tr>
+    <td align="center">
+      <img src="PerfumeSuggester/Screenshots/IMG_2418.jpeg" alt="Filtering screen" width="200"/>
+      <br />
+      <em>Filtering screen1</em>
+    </td>
+    <td align="center">
+      <img src="PerfumeSuggester/Screenshots/IMG_2419.jpeg" alt="Add new perfume screen" width="200"/>
+      <br />
+      <em>Add new perfume screen</em>
+    </td>
+    <td align="center">
+      <img src="PerfumeSuggester/Screenshots/IMG_2420.jpeg" alt="Collection screen" width="200"/>
+      <br />
+      <em>Collection screen</em>
+    </td>
+  </tr>
+</table>
