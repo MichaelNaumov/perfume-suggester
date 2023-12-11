@@ -21,4 +21,9 @@ Welcome to PerfumeSuggester, an innovative app that helps you discover the perfe
   Click the "Run" button in Xcode to launch the app on your simulator or connected device.
 
 4. **Screenshots:**
-![App Screenshot 1](PerfumeSuggester/Screenshots/IMG_2418.jpeg)  ![App Screenshot 2](PerfumeSuggester/Screenshots/IMG_2419.jpeg)  ![App Screenshot 3](PerfumeSuggester/Screenshots/IMG_2420.jpeg)
+
+<p float="left">
+  <img src="PerfumeSuggester/Screenshots/IMG_2418.jpeg" width="33%" />
+  <img src="PerfumeSuggester/Screenshots/IMG_2419.jpeg" width="33%" />
+  <img src="PerfumeSuggester/Screenshots/IMG_2420.jpeg" width="33%" />
+</p>
