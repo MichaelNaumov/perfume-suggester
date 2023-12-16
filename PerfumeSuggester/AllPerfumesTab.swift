@@ -11,7 +11,7 @@ struct AllPerfumesTab: View {
                     NavigationLink(
                         destination: PerfumeDetailsView(perfume: perfume),
                         label: {
-                            Text("\(perfume.brand) \(perfume.name) - \(perfume.seasons.joined(separator: ", ")), \(perfume.dayTimes.joined(separator: ", "))")
+                            Text("\(perfume.brand) \(perfume.name) - \(perfume.seasons.joined(separator: ", ")) - \(perfume.dayTimes.joined(separator: ", "))")
                         }
                     )
                 }

@@ -11,6 +11,16 @@ struct FilterPerfumeTab: View {
     let dayTimeEmojis = EmojiData.dayTimeEmojis
 
     @State private var filteredPerfumes: [Perfume] = []
+    
+    var randomPerfume: Perfume? {
+        if filteredPerfumes.isEmpty {
+            // No filters applied, return a random perfume from the entire collection
+            return viewModel.perfumes.randomElement()
+        } else {
+            // Filters applied, return a random perfume from the filtered collection
+            return filteredPerfumes.randomElement()
+        }
+    }
 
     var body: some View {
         NavigationView {
@@ -47,12 +57,29 @@ struct FilterPerfumeTab: View {
                     }
                 }
 
-                Section(header: Text("Perfume Collection")) {
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        filteredPerfumes.removeAll()
+                        if let randomPerfume = randomPerfume {
+                            // Handle the selected random perfume (e.g., add to results)
+                            filteredPerfumes.append(randomPerfume)
+                        } else {
+                            // No perfumes available
+                            print("No perfumes available.")
+                        }
+                    }) {
+                        Text("🎁 Surprise Me 🎁")
+                    }
+                    Spacer()
+                }
+
+                Section(header: Text("Results")) {
                     List(filteredPerfumes) { perfume in
                         NavigationLink(
                             destination: PerfumeDetailsView(perfume: perfume),
                             label: {
-                                Text("\(perfume.brand) \(perfume.name) - \(perfume.seasons.joined(separator: ", ")), \(perfume.dayTimes.joined(separator: ", "))")
+                                Text("\(perfume.brand) \(perfume.name) - \(perfume.seasons.joined(separator: ", ")) - \(perfume.dayTimes.joined(separator: ", "))")
                             }
                         )
                     }
