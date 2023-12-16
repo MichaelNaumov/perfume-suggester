@@ -7,7 +7,7 @@ struct AllPerfumesTab: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(viewModel.perfumes) { perfume in
+                ForEach(viewModel.perfumes.sorted(by: { $0.brand < $1.brand })) { perfume in
                     NavigationLink(
                         destination: PerfumeDetailsView(perfume: perfume),
                         label: {

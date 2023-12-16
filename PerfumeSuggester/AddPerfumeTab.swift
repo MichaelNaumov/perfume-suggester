@@ -33,7 +33,7 @@ struct AddPerfumeTab: View {
                         )) {
                             // Custom label for the toggle
                             HStack {
-                                Text("\(season) \(seasonEmojis[season] ?? "")")
+                                Text("\(seasonEmojis[season] ?? "")  \(season)")
                                 Spacer()
                             }
                         }
@@ -54,7 +54,7 @@ struct AddPerfumeTab: View {
                         )) {
                             // Custom label for the toggle
                             HStack {
-                                Text("\(timeOfDay) \(dayTimeEmojis[timeOfDay] ?? "")")
+                                Text("\(dayTimeEmojis[timeOfDay] ?? "")  \(timeOfDay)")
                                 Spacer()
                             }
                         }
