@@ -74,25 +74,6 @@ struct AddPerfumeTab: View {
                         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                     }
                 }
-
-                Section(header: Text("Perfume Collection")) {
-                    // Display a List of perfumes ordered by name
-                    List {
-                        ForEach(viewModel.perfumes) { perfume in
-                            NavigationLink(
-                                destination: PerfumeDetailsView(perfume: perfume),
-                                label: {
-                                    Text("\(perfume.brand) \(perfume.name) - \(perfume.seasons.joined(separator: ", ")), \(perfume.dayTimes.joined(separator: ", "))")
-                                }
-                            )
-                        }
-                        .onDelete { indexSet in
-                            // Handle perfume deletion here
-                            viewModel.perfumes.remove(atOffsets: indexSet)
-                            viewModel.savePerfumes()  // Save changes after deletion
-                        }
-                    }
-                }
             }
             .navigationTitle("Add New Perfume")
         }
