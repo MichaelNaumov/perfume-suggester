@@ -60,9 +60,9 @@ struct FilterPerfumeTab: View {
                 HStack {
                     Spacer()
                     Button(action: {
-                        filteredPerfumes.removeAll()
                         if let randomPerfume = randomPerfume {
                             // Handle the selected random perfume (e.g., add to results)
+                            filteredPerfumes.removeAll()
                             filteredPerfumes.append(randomPerfume)
                         } else {
                             // No perfumes available
