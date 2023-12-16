@@ -22,12 +22,13 @@ Welcome to PerfumeSuggester, an innovative app that helps you discover the perfe
 
 4. **Screenshots:**
 
+<p align="middle">
 <table>
   <tr>
     <td align="center">
       <img src="PerfumeSuggester/Screenshots/IMG_2418.jpeg" alt="Filtering screen" width="200"/>
       <br />
-      <em>Filtering screen1</em>
+      <em>Filtering screen</em>
     </td>
     <td align="center">
       <img src="PerfumeSuggester/Screenshots/IMG_2419.jpeg" alt="Add new perfume screen" width="200"/>
@@ -41,3 +42,10 @@ Welcome to PerfumeSuggester, an innovative app that helps you discover the perfe
     </td>
   </tr>
 </table>
+</p>
+
+<p align="middle">
+  <img src="PerfumeSuggester/Screenshots/IMG_2418.jpeg" alt="Filtering screen" width="200"/>
+  <img src="PerfumeSuggester/Screenshots/IMG_2419.jpeg" alt="Add new perfume screen" width="200"/>
+  <img src="PerfumeSuggester/Screenshots/IMG_2420.jpeg" alt="Collection screen" width="200"/>
+</p>

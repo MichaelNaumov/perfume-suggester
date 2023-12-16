@@ -21,6 +21,7 @@
 		973F93862B253F1000CE3775 /* AddPerfumeTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973F93852B253F1000CE3775 /* AddPerfumeTab.swift */; };
 		973F93882B253F4E00CE3775 /* FilterPerfumeTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973F93872B253F4E00CE3775 /* FilterPerfumeTab.swift */; };
 		975787262B2607AB00468716 /* EmojiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975787252B2607AB00468716 /* EmojiData.swift */; };
+		978166D02B2E18D6003A0F0A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 978166CF2B2E18D6003A0F0A /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		973F93852B253F1000CE3775 /* AddPerfumeTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPerfumeTab.swift; sourceTree = "<group>"; };
 		973F93872B253F4E00CE3775 /* FilterPerfumeTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPerfumeTab.swift; sourceTree = "<group>"; };
 		975787252B2607AB00468716 /* EmojiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiData.swift; sourceTree = "<group>"; };
+		978166CF2B2E18D6003A0F0A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		973F93472B25345A00CE3775 = {
 			isa = PBXGroup;
 			children = (
+				978166CF2B2E18D6003A0F0A /* README.md */,
 				973F93522B25345A00CE3775 /* PerfumeSuggester */,
 				973F93652B25345B00CE3775 /* PerfumeSuggesterTests */,
 				973F936F2B25345B00CE3775 /* PerfumeSuggesterUITests */,
@@ -252,6 +255,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				978166D02B2E18D6003A0F0A /* README.md in Resources */,
 				973F935D2B25345B00CE3775 /* Preview Assets.xcassets in Resources */,
 				973F935A2B25345B00CE3775 /* Assets.xcassets in Resources */,
 			);
