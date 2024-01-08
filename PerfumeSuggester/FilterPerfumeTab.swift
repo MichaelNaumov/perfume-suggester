@@ -4,8 +4,8 @@ import SwiftUI
 struct FilterPerfumeTab: View {
     @ObservedObject var viewModel: PerfumeViewModel
     
-    @State private var selectedSeason = "Spring"
-    @State private var selectedTimeOfDay = "Day"
+    @State private var selectedSeason = Date().getCurrentSeason()
+    @State private var selectedTimeOfDay = Date().getCurrentTimeOfDay()
 
     let seasonEmojis = EmojiData.seasonEmojis
     let dayTimeEmojis = EmojiData.dayTimeEmojis

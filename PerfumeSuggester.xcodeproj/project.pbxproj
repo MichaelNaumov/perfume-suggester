@@ -21,6 +21,7 @@
 		973F93862B253F1000CE3775 /* AddPerfumeTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973F93852B253F1000CE3775 /* AddPerfumeTab.swift */; };
 		973F93882B253F4E00CE3775 /* FilterPerfumeTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973F93872B253F4E00CE3775 /* FilterPerfumeTab.swift */; };
 		975787262B2607AB00468716 /* EmojiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975787252B2607AB00468716 /* EmojiData.swift */; };
+		9770E3DD2B4C8120006BB496 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9770E3DC2B4C8120006BB496 /* DateExtension.swift */; };
 		978166D02B2E18D6003A0F0A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 978166CF2B2E18D6003A0F0A /* README.md */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		973F93852B253F1000CE3775 /* AddPerfumeTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPerfumeTab.swift; sourceTree = "<group>"; };
 		973F93872B253F4E00CE3775 /* FilterPerfumeTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPerfumeTab.swift; sourceTree = "<group>"; };
 		975787252B2607AB00468716 /* EmojiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiData.swift; sourceTree = "<group>"; };
+		9770E3DC2B4C8120006BB496 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		978166CF2B2E18D6003A0F0A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +124,7 @@
 				973F93872B253F4E00CE3775 /* FilterPerfumeTab.swift */,
 				971147CC2B25ED13007E4FF0 /* AllPerfumesTab.swift */,
 				975787252B2607AB00468716 /* EmojiData.swift */,
+				9770E3DC2B4C8120006BB496 /* DateExtension.swift */,
 			);
 			path = PerfumeSuggester;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				973F93842B25390000CE3775 /* PerfumeDetailsView.swift in Sources */,
+				9770E3DD2B4C8120006BB496 /* DateExtension.swift in Sources */,
 				975787262B2607AB00468716 /* EmojiData.swift in Sources */,
 				973F93802B2534DC00CE3775 /* Perfume.swift in Sources */,
 				973F93882B253F4E00CE3775 /* FilterPerfumeTab.swift in Sources */,
