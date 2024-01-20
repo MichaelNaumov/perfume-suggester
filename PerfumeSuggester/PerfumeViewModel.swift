@@ -31,15 +31,41 @@ class PerfumeViewModel: ObservableObject {
     }
 
     private func loadPerfumes() {
-        if let data = UserDefaults.standard.data(forKey: "perfumes") {
+        if let data = UserDefaults.standard.data(forKey: "perfumes"), !data.isEmpty {
             do {
+                // Check if the stored data is a valid JSON object
+                let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
+                guard jsonObject is [String: Any] else {
+                    print("Invalid JSON data in UserDefaults.")
+                    loadSeedDataFromJSON()
+                    return
+                }
+
                 perfumes = try JSONDecoder().decode([Perfume].self, from: data)
                 print("Perfumes loaded successfully.")
             } catch {
                 print("Error decoding perfumes: \(error)")
+                loadSeedDataFromJSON()
             }
         } else {
-            print("No data found for key 'perfumes' in UserDefaults.")
+            loadSeedDataFromJSON()
         }
     }
+    
+    private func loadSeedDataFromJSON() {
+        // Load seed data from a JSON file named "seeds.json"
+        if let path = Bundle.main.path(forResource: "seeds", ofType: "json"),
+           let data = try? Data(contentsOf: URL(fileURLWithPath: path)) {
+            do {
+                perfumes = try JSONDecoder().decode([Perfume].self, from: data)
+                savePerfumes()
+                print("Seed data loaded successfully.")
+            } catch {
+                print("Error decoding seed data: \(error)")
+            }
+        } else {
+            print("Seed data JSON file 'seeds.json' not found.")
+        }
+    }
+
 }

@@ -7,17 +7,19 @@ struct AllPerfumesTab: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(viewModel.perfumes.sorted(by: { $0.brand < $1.brand })) { perfume in
-                    NavigationLink(
-                        destination: PerfumeDetailsView(perfume: perfume),
-                        label: {
-                            Text("\(perfume.brand) \(perfume.name) - \(perfume.seasons.joined(separator: ", ")) - \(perfume.dayTimes.joined(separator: ", "))")
-                        }
-                    )
-                }
-                .onDelete { indexSet in
-                    // Handle perfume deletion here
-                    viewModel.removePerfumes(atOffsets: indexSet)
+                Section(header: Text("\(viewModel.perfumes.count) Perfumes")) {
+                    ForEach(viewModel.perfumes) { perfume in
+                        NavigationLink(
+                            destination: PerfumeDetailsView(perfume: perfume),
+                            label: {
+                                Text("\(perfume.brand) \(perfume.name) - \(perfume.seasons.joined(separator: ", ")) - \(perfume.dayTimes.joined(separator: ", "))")
+                            }
+                        )
+                    }
+                    .onDelete { indexSet in
+                        // Handle perfume deletion here
+                        viewModel.removePerfumes(atOffsets: indexSet)
+                    }
                 }
             }
             .navigationTitle("All Perfumes")

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		971147CD2B25ED13007E4FF0 /* AllPerfumesTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971147CC2B25ED13007E4FF0 /* AllPerfumesTab.swift */; };
+		972C57172B5BF9290025BEB6 /* seeds.json in Resources */ = {isa = PBXBuildFile; fileRef = 972C57162B5BF9290025BEB6 /* seeds.json */; };
 		973F93542B25345A00CE3775 /* PerfumeSuggesterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973F93532B25345A00CE3775 /* PerfumeSuggesterApp.swift */; };
 		973F93562B25345A00CE3775 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973F93552B25345A00CE3775 /* ContentView.swift */; };
 		973F935A2B25345B00CE3775 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 973F93592B25345B00CE3775 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		971147CC2B25ED13007E4FF0 /* AllPerfumesTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPerfumesTab.swift; sourceTree = "<group>"; };
+		972C57162B5BF9290025BEB6 /* seeds.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = seeds.json; sourceTree = "<group>"; };
 		973F93502B25345A00CE3775 /* PerfumeSuggester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PerfumeSuggester.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		973F93532B25345A00CE3775 /* PerfumeSuggesterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfumeSuggesterApp.swift; sourceTree = "<group>"; };
 		973F93552B25345A00CE3775 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				971147CC2B25ED13007E4FF0 /* AllPerfumesTab.swift */,
 				975787252B2607AB00468716 /* EmojiData.swift */,
 				9770E3DC2B4C8120006BB496 /* DateExtension.swift */,
+				972C57162B5BF9290025BEB6 /* seeds.json */,
 			);
 			path = PerfumeSuggester;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			files = (
 				978166D02B2E18D6003A0F0A /* README.md in Resources */,
 				973F935D2B25345B00CE3775 /* Preview Assets.xcassets in Resources */,
+				972C57172B5BF9290025BEB6 /* seeds.json in Resources */,
 				973F935A2B25345B00CE3775 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
