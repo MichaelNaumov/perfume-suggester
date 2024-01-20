@@ -35,7 +35,7 @@ class PerfumeViewModel: ObservableObject {
             do {
                 // Check if the stored data is a valid JSON object
                 let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
-                guard jsonObject is [String: Any] else {
+                guard jsonObject is [Any] else {
                     print("Invalid JSON data in UserDefaults.")
                     loadSeedDataFromJSON()
                     return
