@@ -11,23 +11,13 @@ struct FilterPerfumeTab: View {
     let dayTimeEmojis = EmojiData.dayTimeEmojis
 
     @State private var filteredPerfumes: [Perfume] = []
-    
-    var randomPerfume: Perfume? {
-        if filteredPerfumes.isEmpty {
-            // No filters applied, return a random perfume from the entire collection
-            return viewModel.perfumes.randomElement()
-        } else {
-            // Filters applied, return a random perfume from the filtered collection
-            return filteredPerfumes.randomElement()
-        }
-    }
 
     var body: some View {
         NavigationView {
             Form {
                 Section(header: Text("Seasons")) {
                     Picker("Season", selection: $selectedSeason) {
-                        ForEach(["Spring", "Summer", "Autumn", "Winter"], id: \.self) { season in
+                        ForEach(["Any", "Spring", "Summer", "Autumn", "Winter"], id: \.self) { season in
                             Text("\(season) \(seasonEmojis[season] ?? "")")
                         }
                     }
@@ -35,7 +25,7 @@ struct FilterPerfumeTab: View {
 
                 Section(header: Text("Day Time")) {
                     Picker("Day time", selection: $selectedTimeOfDay) {
-                        ForEach(["Day", "Night"], id: \.self) { daytime in
+                        ForEach(["Any", "Day", "Night"], id: \.self) { daytime in
                             Text("\(daytime) \(dayTimeEmojis[daytime] ?? "")")
                         }
                     }
@@ -45,8 +35,8 @@ struct FilterPerfumeTab: View {
                     HStack {
                         Button("Apply Filters") {
                             filteredPerfumes = viewModel.perfumes.filter { perfume in
-                                let isSelectedSeason = selectedSeason.isEmpty || perfume.seasons.contains(selectedSeason)
-                                let isSelectedTimeOfDay = selectedTimeOfDay.isEmpty || perfume.dayTimes.contains(selectedTimeOfDay)
+                                let isSelectedSeason = selectedSeason == "Any" || perfume.seasons.contains(selectedSeason)
+                                let isSelectedTimeOfDay = selectedTimeOfDay == "Any" || perfume.dayTimes.contains(selectedTimeOfDay)
                                 return isSelectedSeason && isSelectedTimeOfDay
                             }
                         }
@@ -60,7 +50,7 @@ struct FilterPerfumeTab: View {
                 HStack {
                     Spacer()
                     Button(action: {
-                        if let randomPerfume = randomPerfume {
+                        if let randomPerfume = viewModel.perfumes.randomElement() {
                             // Handle the selected random perfume (e.g., add to results)
                             filteredPerfumes.removeAll()
                             filteredPerfumes.append(randomPerfume)
@@ -74,7 +64,7 @@ struct FilterPerfumeTab: View {
                     Spacer()
                 }
 
-                Section(header: Text("Results")) {
+                Section(header: Text("Results (\(filteredPerfumes.count))")) {
                     List(filteredPerfumes) { perfume in
                         NavigationLink(
                             destination: PerfumeDetailsView(perfume: perfume),

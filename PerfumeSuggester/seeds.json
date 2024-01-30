@@ -22,8 +22,6 @@
   { "id": "a308b74f-0674-4c17-bd6b-76aebf3e3f15", "brand": "PDM", "name": "Percival", "seasons": ["Spring", "Summer", "Autumn"], "dayTimes": ["Day"] },
   { "id": "3ebd64b8-2cf3-4a1c-bc12-2c0a42e8f85d", "brand": "PDM", "name": "Carlisle", "seasons": ["Autumn", "Winter"], "dayTimes": ["Night"] },
   { "id": "99848a06-7b6e-40c8-986e-7f784a810936", "brand": "PDM", "name": "Pegasus", "seasons": ["Spring", "Autumn", "Winter"], "dayTimes": ["Day", "Night"] },
-  { "id": "c1973dbf-1ba5-4f2e-af0e-141896d13d27", "brand": "PDM", "name": "Sedley", "seasons": ["Spring", "Summer"], "dayTimes": ["Day"] },
-  { "id": "f4bf9e8c-9d0f-408c-9d54-23483a2b5b3e", "brand": "PDM", "name": "Galloway", "seasons": ["Spring", "Summer"], "dayTimes": ["Day"] },
   { "id": "a3d524aa-18fe-43e9-83a0-b1839e974edd", "brand": "PDM", "name": "Kalan", "seasons": ["Autumn", "Winter"], "dayTimes": ["Day", "Night"] },
   { "id": "3b9e9913-b3db-46c8-9b52-13c02f015d1c", "brand": "Amouage", "name": "Reflection Man", "seasons": ["Spring", "Summer", "Autumn"], "dayTimes": ["Day"] },
   { "id": "696f0d13-1321-41d5-8ccf-cf2e16fb32f7", "brand": "Creed", "name": "Royal Oud", "seasons": ["Autumn", "Winter"], "dayTimes": ["Day", "Night"] },
