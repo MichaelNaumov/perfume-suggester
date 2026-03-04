@@ -24,6 +24,8 @@
 		975787262B2607AB00468716 /* EmojiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975787252B2607AB00468716 /* EmojiData.swift */; };
 		9770E3DD2B4C8120006BB496 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9770E3DC2B4C8120006BB496 /* DateExtension.swift */; };
 		978166D02B2E18D6003A0F0A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 978166CF2B2E18D6003A0F0A /* README.md */; };
+		97CC00002B2607AB00468716 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CC00012B2607AB00468716 /* Colors.swift */; };
+		97CC00022B2607AB00468716 /* PerfumeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CC00032B2607AB00468716 /* PerfumeRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		975787252B2607AB00468716 /* EmojiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiData.swift; sourceTree = "<group>"; };
 		9770E3DC2B4C8120006BB496 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		978166CF2B2E18D6003A0F0A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		97CC00012B2607AB00468716 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		97CC00032B2607AB00468716 /* PerfumeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfumeRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,8 @@
 				975787252B2607AB00468716 /* EmojiData.swift */,
 				9770E3DC2B4C8120006BB496 /* DateExtension.swift */,
 				972C57162B5BF9290025BEB6 /* seeds.json */,
+				97CC00012B2607AB00468716 /* Colors.swift */,
+				97CC00032B2607AB00468716 /* PerfumeRow.swift */,
 			);
 			path = PerfumeSuggester;
 			sourceTree = "<group>";
@@ -299,6 +305,8 @@
 				973F93562B25345A00CE3775 /* ContentView.swift in Sources */,
 				973F93542B25345A00CE3775 /* PerfumeSuggesterApp.swift in Sources */,
 				973F93862B253F1000CE3775 /* AddPerfumeTab.swift in Sources */,
+				97CC00002B2607AB00468716 /* Colors.swift in Sources */,
+				97CC00022B2607AB00468716 /* PerfumeRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

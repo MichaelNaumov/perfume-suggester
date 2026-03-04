@@ -3,20 +3,29 @@ import SwiftUI
 
 struct AddPerfumeTab: View {
     @ObservedObject var viewModel: PerfumeViewModel
-    @Binding var perfumeName: String
-    @Binding var perfumeBrand: String
-    @Binding var selectedSeasons: [String]
-    @Binding var selectedDayTimes: [String]
-    
+
+    @State private var perfumeName = ""
+    @State private var perfumeBrand = ""
+    @State private var selectedSeasons: [String] = []
+    @State private var selectedDayTimes: [String] = []
+    @FocusState private var isInputActive: Bool
+
     let seasonEmojis = EmojiData.seasonEmojis
     let dayTimeEmojis = EmojiData.dayTimeEmojis
 
+    private var canSubmit: Bool {
+        !perfumeName.trimmingCharacters(in: .whitespaces).isEmpty &&
+        !perfumeBrand.trimmingCharacters(in: .whitespaces).isEmpty
+    }
+
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Form {
                 Section(header: Text("New Perfume")) {
                     TextField("Perfume Brand", text: $perfumeBrand)
+                        .focused($isInputActive)
                     TextField("Perfume Name", text: $perfumeName)
+                        .focused($isInputActive)
                 }
 
                 Section(header: Text("Seasons")) {
@@ -31,7 +40,6 @@ struct AddPerfumeTab: View {
                                 }
                             }
                         )) {
-                            // Custom label for the toggle
                             HStack {
                                 Text("\(seasonEmojis[season] ?? "")  \(season)")
                                 Spacer()
@@ -52,7 +60,6 @@ struct AddPerfumeTab: View {
                                 }
                             }
                         )) {
-                            // Custom label for the toggle
                             HStack {
                                 Text("\(dayTimeEmojis[timeOfDay] ?? "")  \(timeOfDay)")
                                 Spacer()
@@ -63,16 +70,19 @@ struct AddPerfumeTab: View {
 
                 Section {
                     Button("Add Perfume") {
-                        viewModel.addPerfume(name: perfumeName, seasons: selectedSeasons, dayTimes: selectedDayTimes, brand: perfumeBrand)
-
-                        // Clear the text field and reset other fields after adding a perfume
+                        viewModel.addPerfume(
+                            name: perfumeName.trimmingCharacters(in: .whitespaces),
+                            seasons: selectedSeasons,
+                            dayTimes: selectedDayTimes,
+                            brand: perfumeBrand.trimmingCharacters(in: .whitespaces)
+                        )
                         perfumeName = ""
                         perfumeBrand = ""
                         selectedSeasons = []
                         selectedDayTimes = []
-                        // Hide the keyboard after new perfume submit
-                        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                        isInputActive = false
                     }
+                    .disabled(!canSubmit)
                 }
             }
             .navigationTitle("Add New Perfume")

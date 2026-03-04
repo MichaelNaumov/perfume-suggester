@@ -3,19 +3,26 @@ import SwiftUI
 
 struct FilterPerfumeTab: View {
     @ObservedObject var viewModel: PerfumeViewModel
-    
+
     @State private var selectedSeason = Date().getCurrentSeason()
     @State private var selectedTimeOfDay = Date().getCurrentTimeOfDay()
+    @State private var surprisePerfume: Perfume?
 
     let seasonEmojis = EmojiData.seasonEmojis
     let dayTimeEmojis = EmojiData.dayTimeEmojis
 
-    @State private var filteredPerfumes: [Perfume] = []
+    private var filteredPerfumes: [Perfume] {
+        viewModel.perfumes.filter { perfume in
+            let seasonMatch = selectedSeason == "Any" || perfume.seasons.contains(selectedSeason)
+            let timeMatch = selectedTimeOfDay == "Any" || perfume.dayTimes.contains(selectedTimeOfDay)
+            return seasonMatch && timeMatch
+        }
+    }
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Form {
-                Section(header: Text("Seasons")) {
+                Section(header: Text("Season")) {
                     Picker("Season", selection: $selectedSeason) {
                         ForEach(["Any", "Spring", "Summer", "Autumn", "Winter"], id: \.self) { season in
                             Text("\(season) \(seasonEmojis[season] ?? "")")
@@ -24,58 +31,34 @@ struct FilterPerfumeTab: View {
                 }
 
                 Section(header: Text("Day Time")) {
-                    Picker("Day time", selection: $selectedTimeOfDay) {
+                    Picker("Day Time", selection: $selectedTimeOfDay) {
                         ForEach(["Any", "Day", "Night"], id: \.self) { daytime in
                             Text("\(daytime) \(dayTimeEmojis[daytime] ?? "")")
                         }
                     }
                 }
 
-                Section(header: Text("Filters")) {
-                    HStack {
-                        Button("Apply Filters") {
-                            filteredPerfumes = viewModel.perfumes.filter { perfume in
-                                let isSelectedSeason = selectedSeason == "Any" || perfume.seasons.contains(selectedSeason)
-                                let isSelectedTimeOfDay = selectedTimeOfDay == "Any" || perfume.dayTimes.contains(selectedTimeOfDay)
-                                return isSelectedSeason && isSelectedTimeOfDay
-                            }
-                        }
-                    }
-
-                    Button("Clear Results") {
-                        filteredPerfumes.removeAll()
-                    }
-                }
-
                 HStack {
                     Spacer()
-                    Button(action: {
-                        if let randomPerfume = viewModel.perfumes.randomElement() {
-                            // Handle the selected random perfume (e.g., add to results)
-                            filteredPerfumes.removeAll()
-                            filteredPerfumes.append(randomPerfume)
-                        } else {
-                            // No perfumes available
-                            print("No perfumes available.")
-                        }
-                    }) {
-                        Text("🎁 Surprise Me 🎁")
+                    Button("🎁 Surprise Me 🎁") {
+                        surprisePerfume = filteredPerfumes.randomElement()
                     }
+                    .disabled(filteredPerfumes.isEmpty)
                     Spacer()
                 }
 
                 Section(header: Text("Results (\(filteredPerfumes.count))")) {
-                    List(filteredPerfumes) { perfume in
-                        NavigationLink(
-                            destination: PerfumeDetailsView(perfume: perfume),
-                            label: {
-                                Text("\(perfume.brand) \(perfume.name) - \(perfume.seasons.joined(separator: ", ")) - \(perfume.dayTimes.joined(separator: ", "))")
-                            }
-                        )
+                    ForEach(filteredPerfumes) { perfume in
+                        NavigationLink(destination: PerfumeDetailsView(perfume: perfume)) {
+                            PerfumeRow(perfume: perfume)
+                        }
                     }
                 }
             }
             .navigationTitle("Filter Perfumes")
+            .navigationDestination(item: $surprisePerfume) { perfume in
+                PerfumeDetailsView(perfume: perfume)
+            }
         }
         .tabItem {
             Label("Filter", systemImage: "line.horizontal.3")

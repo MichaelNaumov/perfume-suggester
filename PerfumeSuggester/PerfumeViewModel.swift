@@ -1,9 +1,15 @@
 // PerfumeViewModel.swift
 import Foundation
-import SwiftUI
+import Combine
 
 class PerfumeViewModel: ObservableObject {
     @Published var perfumes: [Perfume] = []
+
+    private let storageURL: URL = {
+        let dir = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!
+        try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
+        return dir.appendingPathComponent("perfumes.json")
+    }()
 
     init() {
         loadPerfumes()
@@ -14,7 +20,7 @@ class PerfumeViewModel: ObservableObject {
         perfumes.append(perfume)
         savePerfumes()
     }
-    
+
     func removePerfumes(atOffsets offsets: IndexSet) {
         perfumes.remove(atOffsets: offsets)
         savePerfumes()
@@ -23,49 +29,36 @@ class PerfumeViewModel: ObservableObject {
     func savePerfumes() {
         do {
             let data = try JSONEncoder().encode(perfumes)
-            UserDefaults.standard.set(data, forKey: "perfumes")
-            print("Perfumes saved successfully.")
+            try data.write(to: storageURL, options: .atomic)
         } catch {
-            print("Error encoding perfumes: \(error)")
+            print("Error saving perfumes: \(error)")
         }
     }
 
     private func loadPerfumes() {
-        if let data = UserDefaults.standard.data(forKey: "perfumes"), !data.isEmpty {
-            do {
-                // Check if the stored data is a valid JSON object
-                let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
-                guard jsonObject is [Any] else {
-                    print("Invalid JSON data in UserDefaults.")
-                    loadSeedDataFromJSON()
-                    return
-                }
-
-                perfumes = try JSONDecoder().decode([Perfume].self, from: data)
-                print("Perfumes loaded successfully.")
-            } catch {
-                print("Error decoding perfumes: \(error)")
-                loadSeedDataFromJSON()
-            }
-        } else {
-            loadSeedDataFromJSON()
+        guard let data = try? Data(contentsOf: storageURL), !data.isEmpty else {
+            loadSeedData()
+            return
         }
-    }
-    
-    private func loadSeedDataFromJSON() {
-        // Load seed data from a JSON file named "seeds.json"
-        if let path = Bundle.main.path(forResource: "seeds", ofType: "json"),
-           let data = try? Data(contentsOf: URL(fileURLWithPath: path)) {
-            do {
-                perfumes = try JSONDecoder().decode([Perfume].self, from: data)
-                savePerfumes()
-                print("Seed data loaded successfully.")
-            } catch {
-                print("Error decoding seed data: \(error)")
-            }
-        } else {
-            print("Seed data JSON file 'seeds.json' not found.")
+        do {
+            perfumes = try JSONDecoder().decode([Perfume].self, from: data)
+        } catch {
+            print("Error loading perfumes: \(error)")
+            loadSeedData()
         }
     }
 
+    private func loadSeedData() {
+        guard let url = Bundle.main.url(forResource: "seeds", withExtension: "json"),
+              let data = try? Data(contentsOf: url) else {
+            print("Seed file 'seeds.json' not found.")
+            return
+        }
+        do {
+            perfumes = try JSONDecoder().decode([Perfume].self, from: data)
+            savePerfumes()
+        } catch {
+            print("Error loading seed data: \(error)")
+        }
+    }
 }

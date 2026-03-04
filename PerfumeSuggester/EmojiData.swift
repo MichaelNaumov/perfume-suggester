@@ -1,6 +1,6 @@
 // EmojiData.swift
 
-struct EmojiData {
+enum EmojiData {
     static let seasonEmojis: [String: String] = [
         "Spring": "🌿",
         "Summer": "⛱️",

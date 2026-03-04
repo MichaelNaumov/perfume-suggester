@@ -5,19 +5,15 @@ struct AllPerfumesTab: View {
     @ObservedObject var viewModel: PerfumeViewModel
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
                 Section(header: Text("\(viewModel.perfumes.count) Perfumes")) {
                     ForEach(viewModel.perfumes) { perfume in
-                        NavigationLink(
-                            destination: PerfumeDetailsView(perfume: perfume),
-                            label: {
-                                Text("\(perfume.brand) \(perfume.name) - \(perfume.seasons.joined(separator: ", ")) - \(perfume.dayTimes.joined(separator: ", "))")
-                            }
-                        )
+                        NavigationLink(destination: PerfumeDetailsView(perfume: perfume)) {
+                            PerfumeRow(perfume: perfume)
+                        }
                     }
                     .onDelete { indexSet in
-                        // Handle perfume deletion here
                         viewModel.removePerfumes(atOffsets: indexSet)
                     }
                 }
